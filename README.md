@@ -1,8 +1,8 @@
 # Pertemuan 04 Seleksi Multi-Kondisi dan Validasi Input
 
-Nama: [Nama Kamu]
-NIM: [NIM Kamu]
-Kelas: [Kelas Kamu]
+Nama: Azizah Nur Kholishah
+NIM: 2225250116
+Kelas: 3E
 
 ## Tujuan
 Pada pertemuan ini, saya bertujuan memahami penggunaan seleksi multi-kondisi dengan if-elif-else serta mempelajari cara melakukan validasi input agar program dapat mengolah data sesuai dengan kondisi yang telah ditentukan.
@@ -21,120 +21,130 @@ python3 praktik/validasi_klasifikasi_nilai.py
 
 ## Tabel Keputusan
 
-### 1. Latihan 1 (Predikat Nilai)
-| Kondisi Nilai | Predikat |
-| :--- | :---: |
-| Nilai >= 85 | A |
-| 70 <= Nilai < 85 | B |
-| 60 <= Nilai < 70 | C |
-| 50 <= Nilai < 60 | D |
+### 1. Predikat Nilai
+| Kondisi | Predikat |
+|---|---|
+| Nilai ≥ 85 | A |
+| Nilai ≥ 70 dan Nilai < 85 | B |
+| Nilai ≥ 60 dan Nilai < 70 | C |
+| Nilai ≥ 50 dan Nilai < 60 | D |
 | Nilai < 50 | E |
 
-### 2. Latihan 2 (Klasifikasi Bilangan Bulat)
-| Kondisi Angka (x) | Jenis Bilangan |
-| :--- | :--- |
+### 2. Klasifikasi Bilangan Bulat
+| Kondisi | Keputusan |
+|---|---|
 | x < 0 | Bilangan negatif |
 | x == 0 | Nol |
 | x > 0 dan x % 2 == 0 | Bilangan positif genap |
 | x > 0 dan x % 2 != 0 | Bilangan positif ganjil |
 
-### 3. Latihan 3 (Klasifikasi Sudut)
-| Besarnya Sudut ($\theta$) | Klasifikasi / Output |
-| :--- | :--- |
-| $\theta \le 0$ atau $\theta \ge 180$ | Masukan ditolak |
-| $0 < \theta < 90$ | Sudut lancip |
-| $\theta == 90$ | Sudut siku-siku |
-| $90 < \theta < 180$ | Sudut tumpul |
+### 3. Validasi Rentang 
+| Kondisi | Keputusan |
+|---|---|
+| sudut ≤ 0 atau sudut ≥ 180 | Masukan ditolak: sudut harus lebih dari 0 dan kurang dari 180 |
+| 0 < sudut < 90 | Sudut lancip |
+| sudut == 90 | Sudut siku-siku |
+| 90 < sudut < 180 | Sudut tumpul |
 
-### 4. Latihan 4 (Ketuntasan Soal dari 20)
-| Condition / Syarat | Status / Output |
-| :--- | :--- |
-| Input bukan integer | Masukan ditolak: jumlah harus berupa bilangan bulat |
-| Soal Benar < 0 atau Soal Benar > 20 | Masukan ditolak: jumlah harus berada pada rentang 0 sampai 20 |
-| Persentase Benar >= 75% | Tuntas |
-| Persentase Benar < 75% | Belum tuntas |
+### 4. Validaasi Tipe
+| Kondisi | Keputusan |
+|---|---|
+| Input bukan bilangan bulat | Masukan ditolak: jumlah harus berupa bilangan bulat |
+| benar < 0 atau benar > 20 | Masukan ditolak: jumlah harus berada pada rentang 0 sampai 20 |
+| 0 ≤ benar ≤ 20 dan persen ≥ 75 | Tuntas |
+| 0 ≤ benar ≤ 20 dan persen < 75 | Belum tuntas |
 
-### 5. Latihan 5 (Klasifikasi Segitiga Berdasarkan Sudut)
-| Kondisi Sudut (A, B, C) | Output |
-| :--- | :--- |
-| A <= 0 atau B <= 0 atau C <= 0 | Masukan ditolak: setiap sudut harus lebih dari 0 derajat |
-| A + B + C != 180 | Masukan ditolak: jumlah ketiga sudut harus 180 derajat |
-| Sudut Terbesar > 90 | Segitiga tumpul |
-| Sudut Terbesar == 90 | Segitiga siku-siku |
-| Sudut Terbesar < 90 | Segitiga lancip |
+### 5. Klasifikasi Segitiga Berdasarkan Sudut
+| Kondisi | Keputusan |
+|---|---|
+| a ≤ 0 atau b ≤ 0 atau c ≤ 0 | Masukan ditolak: setiap sudut harus lebih dari 0 derajat |
+| abs(a + b + c - 180) > 1e-9 | Masukan ditolak: jumlah ketiga sudut harus 180 derajat |
+| Sudut terbesar > 90 | Segitiga tumpul |
+| Sudut terbesar == 90 | Segitiga siku-siku |
+| Sudut terbesar < 90 | Segitiga lancip |
 
 ### 6. Praktik 1 (Validasi dan Klasifikasi Nilai Akhir)
-| Kategori / Kondisi | Syarat | Hasil / Output |
-| :--- | :--- | :--- |
-| Tipe Non-Angka | Input Ujian/Tugas/Hadir berupa teks | Masukan ditolak: seluruh data harus berupa angka. |
-| Rentang Ujian | Ujian < 0 atau Ujian > 100 | Masukan ditolak: nilai ujian di luar rentang 0 sampai 100. |
-| Rentang Tugas | Tugas < 0 atau Tugas > 100 | Masukan ditolak: nilai tugas di luar rentang 0 sampai 100. |
-| Rentang Hadir | Hadir < 0 atau Hadir > 100 | Masukan ditolak: kehadiran di luar rentang 0 sampai 100. |
-| Kehadiran Kurang | Kehadiran < 80% | Status = Tidak memenuhi syarat kehadiran |
-| Predikat A | Hadir >= 80% dan Nilai Akhir >= 85 | Predikat A, Lulus |
-| Predikat B | Hadir >= 80% dan 70 <= Nilai Akhir < 85 | Predikat B, Lulus |
-| Predikat C | Hadir >= 80% dan 60 <= Nilai Akhir < 70 | Predikat C, Lulus |
-| Predikat D | Hadir >= 80% dan 50 <= Nilai Akhir < 60 | Predikat D, Belum lulus |
-| Predikat E | Hadir >= 80% dan Nilai Akhir < 50 | Predikat E, Belum lulus |
+Nilai akhir dihitung menggunakan rumus:
+
+Nilai Akhir = (0.6 × Nilai Ujian) + (0.4 × Nilai Tugas)
+
+Mahasiswa harus memiliki kehadiran minimal 80% untuk dapat memperoleh predikat.
+
+| Kondisi | Keputusan |
+|---|---|
+| Input bukan angka | Masukan ditolak: seluruh data harus berupa angka |
+| Nilai ujian di luar rentang 0-100 | Penolakan nilai ujian |
+| Nilai tugas di luar rentang 0-100 | Penolakan nilai tugas |
+| Kehadiran di luar rentang 0-100 | Penolakan kehadiran |
+| Kehadiran < 80 | Tidak memenuhi syarat kehadiran |
+| Nilai akhir ≥ 85 | Predikat A, Lulus |
+| 70 ≤ Nilai akhir < 85 | Predikat B, Lulus |
+| 60 ≤ Nilai akhir < 70 | Predikat C, Lulus |
+| 50 ≤ Nilai akhir < 60 | Predikat D, Belum lulus |
+| Nilai akhir < 50 | Predikat E, Belum lulus |
 
 ## Hasil Pengujian
 
-### 1. Hasil Pengujian Latihan 1 (Predikat Nilai)
-| Masukan (Nilai) | Keluaran yang Diharapkan | Keluaran Aktual | Status |
-| :---: | :--- | :--- | :---: |
-| 90 | Nilai 90.00 memperoleh predikat A. | Nilai 90.00 memperoleh predikat A. | Sesuai |
-| 75 | Nilai 75.00 memperoleh predikat B. | Nilai 75.00 memperoleh predikat B. | Sesuai |
-| 65 | Nilai 65.00 memperoleh predikat C. | Nilai 65.00 memperoleh predikat C. | Sesuai |
-| 55 | Nilai 55.00 memperoleh predikat D. | Nilai 55.00 memperoleh predikat D. | Sesuai |
-| 40 | Nilai 40.00 memperoleh predikat E. | Nilai 40.00 memperoleh predikat E. | Sesuai |
+### 1. Latihan 1 - Predikat Nilai
+| Input | Output |
+|---|---|
+| 92 | Nilai 92.00 memperoleh predikat A |
+| 85 | Nilai 85.00 memperoleh predikat A |
+| 84.9 | Nilai 84.90 memperoleh predikat B |
+| 70 | Nilai 70.00 memperoleh predikat B |
+| 60 | Nilai 60.00 memperoleh predikat C |
+| 50 | Nilai 50.00 memperoleh predikat D |
+| 49.9 | Nilai 49.90 memperoleh predikat E |
 
-### 2. Hasil Pengujian Latihan 2 (Klasifikasi Bilangan Bulat)
-| Masukan (x) | Keluaran yang Diharapkan | Keluaran Aktual | Status |
-| :---: | :--- | :--- | :---: |
-| -5 | Bilangan negatif | Bilangan negatif | Sesuai |
-| 0 | Nol | Nol | Sesuai |
-| 4 | Bilangan positif genap | Bilangan positif genap | Sesuai |
-| 7 | Bilangan positif ganjil | Bilangan positif ganjil | Sesuai |
+### 2. Latihan 2 - Klasifikasi Bilangan Bulat
+| Input | Output |
+|---|---|
+| -7 | Bilangan negatif |
+| 0 | Nol |
+| 8 | Bilangan positif genap |
+| 13 | Bilangan positif ganjil |
 
-### 3. Hasil Pengujian Latihan 3 (Klasifikasi Sudut)
-| Masukan (Sudut) | Keluaran yang Diharapkan | Keluaran Aktual | Status |
-| :---: | :--- | :--- | :---: |
-| 0 | Masukan ditolak: sudut harus lebih dari 0 dan kurang dari 180. | Masukan ditolak: sudut harus lebih dari 0 dan kurang dari 180. | Sesuai |
-| 45 | Sudut lancip | Sudut lancip | Sesuai |
-| 90 | Sudut siku-siku | Sudut siku-siku | Sesuai |
-| 120 | Sudut tumpul | Sudut tumpul | Sesuai |
-| 180 | Masukan ditolak: sudut harus lebih dari 0 dan kurang dari 180. | Masukan ditolak: sudut harus lebih dari 0 dan kurang dari 180. | Sesuai |
+### 3. Latihan 3 - Validasi Rentang 
+| Input | Output |
+|---|---|
+| 45 | Sudut lancip |
+| 90 | Sudut siku-siku |
+| 135 | Sudut tumpul |
+| 0 | Masukan ditolak: sudut harus lebih dari 0 dan kurang dari 180 |
+| 180 | Masukan ditolak: sudut harus lebih dari 0 dan kurang dari 180 |
+| -30 | Masukan ditolak: sudut harus lebih dari 0 dan kurang dari 180 |
 
-### 4. Hasil Pengujian Latihan 4 (Ketuntasan Soal dari 20)
-| Masukan (Soal Benar) | Keluaran yang Diharapkan | Keluaran Aktual | Status |
-| :---: | :--- | :--- | :---: |
-| abc | Masukan ditolak: jumlah harus berupa bilangan bulat. | Masukan ditolak: jumlah harus berupa bilangan bulat. | Sesuai |
-| -2 | Masukan ditolak: jumlah harus berada pada rentang 0 sampai 20. | Masukan ditolak: jumlah harus berada pada rentang 0 sampai 20. | Sesuai |
-| 25 | Masukan ditolak: jumlah harus berada pada rentang 0 sampai 20. | Masukan ditolak: jumlah harus berada pada rentang 0 sampai 20. | Sesuai |
-| 16 | Persentase = 80.00 persen<br>Tuntas | Persentase = 80.00 persen<br>Tuntas | Sesuai |
-| 10 | Persentase = 50.00 persen<br>Belum tuntas | Persentase = 50.00 persen<br>Belum tuntas | Sesuai |
+### 4. Latihan 4 - Validasi Tipe
+| Input | Output |
+|---|---|
+| 15 | Persentase = 75.00 persen, Tuntas |
+| 14 | Persentase = 70.00 persen, Belum tuntas |
+| 20 | Persentase = 100.00 persen, Tuntas |
+| 0 | Persentase = 0.00 persen, Belum tuntas |
+| 21 | Masukan ditolak: jumlah harus berada pada rentang 0 sampai 20 |
+| dua belas | Masukan ditolak: jumlah harus berupa bilangan bulat |
 
-### 5. Hasil Pengujian Latihan 5 (Klasifikasi Segitiga Berdasarkan Sudut)
-| Sudut A | Sudut B | Sudut C | Keluaran yang Diharapkan | Keluaran Aktual | Status |
-| :---: | :---: | :---: | :--- | :--- | :---: |
-| 0 | 90 | 90 | Masukan ditolak: setiap sudut harus lebih dari 0 derajat. | Masukan ditolak: setiap sudut harus lebih dari 0 derajat. | Sesuai |
-| 60 | 60 | 70 | Masukan ditolak: jumlah ketiga sudut harus 180 derajat. | Masukan ditolak: jumlah ketiga sudut harus 180 derajat. | Sesuai |
-| 100 | 40 | 40 | Segitiga tumpul | Segitiga tumpul | Sesuai |
-| 90 | 45 | 45 | Segitiga siku-siku | Segitiga siku-siku | Sesuai |
-| 60 | 60 | 60 | Segitiga lancip | Segitiga lancip | Sesuai |
+### 5. Latihan 5 - Klasifikasi Segitiga Berdasarkan Sudut
+| Input | Output |
+|---|---|
+| 60, 60, 60 | Segitiga lancip |
+| 90, 45, 45 | Segitiga siku-siku |
+| 120, 30, 30 | Segitiga tumpul |
+| 100, 50, 40 | Masukan ditolak: jumlah ketiga sudut harus 180 derajat |
+| 0, 90, 90 | Masukan ditolak: setiap sudut harus lebih dari 0 derajat |
 
-### Hasil Pengujian Praktik 1 (Validasi dan Klasifikasi Nilai Akhir)
-| Ujian | Tugas | Kehadiran | Nilai Akhir | Keluaran yang Diharapkan | Keluaran Aktual | Status |
-| :---: | :---: | :---: | :---: | :--- | :--- | :---: |
-| 90 | 80 | 95 | 86.00 | Predikat A, Lulus | Nilai akhir = 86.00<br>Predikat A, Lulus | Sesuai |
-| 75 | 70 | 85 | 73.00 | Predikat B, Lulus | Nilai akhir = 73.00<br>Predikat B, Lulus | Sesuai |
-| 60 | 60 | 80 | 60.00 | Predikat C, Lulus | Nilai akhir = 60.00<br>Predikat C, Lulus | Sesuai |
-| 55 | 50 | 90 | 53.00 | Predikat D, Belum lulus | Nilai akhir = 53.00<br>Predikat D, Belum lulus | Sesuai |
-| 40 | 30 | 100 | 36.00 | Predikat E, Belum lulus | Nilai akhir = 36.00<br>Predikat E, Belum lulus | Sesuai |
-| 90 | 90 | 75 | 90.00 | Nilai akhir tetap tampil, status Tidak memenuhi syarat kehadiran | Nilai akhir = 90.00<br>Status = Tidak memenuhi syarat kehadiran | Sesuai |
-| 105 | 80 | 90 | - | Pesan penolakan rentang nilai ujian | Masukan ditolak: nilai ujian di luar rentang 0 sampai 100. | Sesuai |
-| 80 | -5 | 90 | - | Pesan penolakan rentang nilai tugas | Masukan ditolak: nilai tugas di luar rentang 0 sampai 100. | Sesuai |
-| 80 | 80 | abc | - | Pesan penolakan tipe | Masukan ditolak: seluruh data harus berupa angka. | Sesuai |
+### Praktik 1 - Validasi dan Klasifikasi Nilai Akhir
+| Nilai Ujian | Nilai Tugas | Kehadiran | Output |
+|---|---|---|---|
+| 90 | 80 | 95 | Nilai akhir = 86.00, Predikat A, Lulus |
+| 75 | 70 | 85 | Nilai akhir = 73.00, Predikat B, Lulus |
+| 60 | 60 | 80 | Nilai akhir = 60.00, Predikat C, Lulus |
+| 55 | 50 | 90 | Nilai akhir = 53.00, Predikat D, Belum lulus |
+| 40 | 30 | 100 | Nilai akhir = 36.00, Predikat E, Belum lulus |
+| 90 | 90 | 75 | Nilai akhir = 90.00, Tidak memenuhi syarat kehadiran |
+| 105 | 80 | 90 | Masukan ditolak: nilai ujian di luar rentang 0 sampai 100 |
+| 80 | -5 | 90 | Masukan ditolak: nilai tugas di luar rentang 0 sampai 100 |
+| 80 | 80 | abc | Masukan ditolak: seluruh data harus berupa angka |
 
 ## Refleksi 
 Pada pertemuan ini, saya belajar menggunakan if-elif-else untuk membuat program dengan beberapa kondisi serta melakukan validasi input. Dari latihan yang dilakukan, saya menjadi lebih memahami cara mengklasifikasikan data dan menangani input yang tidak sesuai. 
